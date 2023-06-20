@@ -7,12 +7,29 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div
-      id="image-container"
-      class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#f8db27]"
-    ></div>
+  <body class="bg-[#2f64d6]">
+    <section class="h-screen">
+      <div class="flex justify-center items-center h-auto">
+        <img
+          src="./src/media/The_Simpsons_logo.svg"
+          alt="The Simpsons Logo"
+          class="w-1/2"
+        />
+      </div>
 
-    <script src="./src/js/main.js"></script>
+      <h2 class="text-4xl text-white flex items-center justify-center">
+        Una Aventura por el Universo Amarillo
+      </h2>
+
+      <audio id="clickSound" src="./src/media/mordida.mp3"></audio>
+      <img
+        id="donutImage"
+        src="./src/media/dona.png"
+        alt="Donut"
+        class="w-52 h-52 mx-auto mt-3 transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
+      />
+    </section>
+
+    <script src="./src/js/index.js"></script>
   </body>
 </html>
