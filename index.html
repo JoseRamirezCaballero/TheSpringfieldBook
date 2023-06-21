@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-[#2f64d6]">
+    <audio id="bg-music" src="./src/media/main-theme.mp3"></audio>
     <section class="h-screen">
       <div class="flex justify-center items-center h-auto">
         <img
@@ -39,6 +40,30 @@
           alt="Jese Leos image"
         />
         <div id="chat-message" class="text-lg text-black"></div>
+      </div>
+
+      <div data-dial-init class="fixed right-6 bottom-6 group">
+        <button
+          id="play-button"
+          class="flex items-center justify-center text-white bg-[#ffde00] rounded-full w-14 h-14 hover:bg-yellow-400"
+        >
+          <svg
+            id="play-icon"
+            aria-hidden="true"
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 4v16l13-8z"
+            ></path>
+          </svg>
+        </button>
       </div>
     </section>
 
