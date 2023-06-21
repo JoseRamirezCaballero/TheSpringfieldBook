@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,7 @@
   </head>
   <body class="bg-[#2f64d6]">
     <audio id="bg-music" src="./src/media/main-theme.mp3"></audio>
-    <section class="h-screen" aria-label="Vista principal">
+    <section class="h-screen hidden" aria-label="Vista principal">
       <div class="flex justify-center items-center h-auto">
         <img
           src="./src/media/The_Simpsons_logo.svg"
@@ -34,12 +34,12 @@
     <section aria-label="Elementos interactivos">
       <div
         id="homer-chat"
-        class="fixed flex items-center max-w-xs p-4 space-x-4 text-gray-500 bg-white rounded-lg shadow bottom-5 left-5"
+        class="fixed flex items-center p-4 space-x-4 text-gray-500 bg-white rounded-lg shadow bottom-5 left-5"
       >
         <img
           class="w-9 h-9 rounded-full shadow-lg"
           src="./src/media/homero-profile.jpg"
-          alt="Jese Leos image"
+          alt="Homero"
         />
         <div id="chat-message" class="text-lg text-black"></div>
       </div>
@@ -67,6 +67,37 @@
           </svg>
         </button>
       </div>
+    </section>
+
+    <section aria-label="Vista secundaria">
+      <div class="flex justify-center items-center h-auto">
+        <img
+          src="./src/media/The_Simpsons_logo.svg"
+          alt="The Simpsons Logo"
+          class="w-1/4"
+        />
+      </div>
+
+      <h2
+        class="text-4xl text-center text-white flex items-center justify-center pl-10 pr-10 pt-5 pb-5"
+      >
+        Explora los diferentes personajes de Springfield y sumérgete en sus
+        historias únicas y fascinantes
+      </h2>
+
+      <div class="inline-flex items-center justify-center w-full">
+        <hr class="w-64 h-1 my-8 bg-white border-0 rounded" />
+        <div class="absolute px-4 bg-[#2f64d6]">
+          <img class="w-8 h-8" src="./src/media/dona-mordida.png" alt="Donut" />
+        </div>
+      </div>
+
+      <main class="m-5">
+        <div
+          id="image-container"
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2"
+        ></div>
+      </main>
     </section>
 
     <script src="./src/js/index.js"></script>
