@@ -100,6 +100,51 @@
       </main>
     </section>
 
+    <section id="modal" class="hidden" aria-label="Modal">
+      <div
+        class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full h-full"
+      >
+        <div class="relative w-full max-w-2xl">
+          <div class="relative bg-white rounded-lg shadow">
+            <div
+              class="flex items-start justify-between p-4 border-b rounded-t"
+            >
+              <h3 id="nombre" class="text-xl font-semibold text-black"></h3>
+              <span
+                id="contenedorEstado"
+                class="inline-flex items-center font-medium mr-2 rounded-full max-w-xs"
+              >
+                <img
+                  class="w-8 h-8 rounded-full mr-2"
+                  src="./src/media/Reverendo.jpg"
+                  alt="Reverendo Timothy Lovejoy"
+                />
+                <span
+                  id="estado"
+                  class="pr-2 text-lg leading-none font-semibold font-medium"
+                ></span>
+              </span>
+            </div>
+            <div class="p-6 space-y-6">
+              <p id="historia" class="text-lg font-medium text-black"></p>
+              <p id="infoAdicional" class="text-lg font-medium text-black"></p>
+            </div>
+            <div
+              class="flex items-center justify-center p-6 space-x-2 border-t border-gray-200 rounded-b"
+            >
+              <button
+                id="close"
+                class="flex justify-between items-center text-white bg-[#fc0000] font-medium rounded-lg text-lg px-2 py-2 text-center"
+              >
+                <img src="./src/media/duff.png" alt="Duff" class="w-8 h-6" />
+                Perfectirijillo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="./src/js/index.js"></script>
   </body>
 </html>
