@@ -85,6 +85,21 @@ function typeMessage(message, time = 7) {
 }
 typeMessage("D'oh! ¡Dale un bocado a la rosquilla!", 7);
 
+//FILTRADO
+const generoButton = document.getElementById("genero");
+
+const generoMenu = document.getElementById("divFiltrar");
+
+generoButton.addEventListener("click", function () {
+  const isHidden = generoMenu.classList.contains("hidden");
+
+  if (isHidden) {
+    generoMenu.classList.remove("hidden");
+  } else {
+    generoMenu.classList.add("hidden");
+  }
+});
+
 const characters = async () => {
   try {
     const response = await fetch(
@@ -125,7 +140,7 @@ fetch("/api/chatHomero.json")
     rosquilla = data.Rosquilla;
   })
   .catch((error) => {
-    console.error("Error al cargar el archivo JSON:", error);
+    console.error(error);
   });
 
 const imageContainer = document.getElementById("image-container");
@@ -135,6 +150,7 @@ const imageContainer = document.getElementById("image-container");
     const charactersData = await characters();
     charactersData.forEach((character) => {
       const divElement = document.createElement("div");
+      divElement.id = character.Genero.toLowerCase();
       divElement.className =
         "flex items-center justify-center mb-2 bg-[#0097ce] rounded-xl cursor-pointer";
 
@@ -196,10 +212,49 @@ const imageContainer = document.getElementById("image-container");
 
       imageContainer.appendChild(divElement);
     });
+
+    const buscarPersonajeInput = document.getElementById("buscarPersonaje");
+    buscarPersonajeInput.addEventListener("input", (event) => {
+      const textoBusqueda = event.target.value.toLowerCase();
+      const tarjetasPersonajes = imageContainer.querySelectorAll("div");
+
+      tarjetasPersonajes.forEach((tarjeta) => {
+        const nombrePersonaje = tarjeta.querySelector("img").alt.toLowerCase();
+        if (nombrePersonaje.includes(textoBusqueda)) {
+          tarjeta.classList.remove("hidden");
+        } else {
+          tarjeta.classList.add("hidden");
+        }
+      });
+    });
   } catch (error) {
     console.error(error);
   }
 })();
+
+const masculinoButton = document.querySelector("#filtrarMasculino");
+const femeninoButton = document.querySelector("#filtrarFemenino");
+
+masculinoButton.addEventListener("click", function () {
+  filtrarPersonajes("masculino");
+});
+
+femeninoButton.addEventListener("click", function () {
+  filtrarPersonajes("femenino");
+});
+
+const filtrarPersonajes = (genero) => {
+  const tarjetasPersonajes = imageContainer.querySelectorAll("div");
+
+  tarjetasPersonajes.forEach((tarjeta) => {
+    if (tarjeta.id.toLowerCase() === genero.toLowerCase()) {
+      tarjeta.classList.remove("hidden");
+    } else {
+      tarjeta.classList.add("hidden");
+    }
+  });
+  divFiltrar.classList.add("hidden");
+};
 
 const closeButton = document.querySelector("#close");
 
