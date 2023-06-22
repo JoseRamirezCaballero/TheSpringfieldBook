@@ -46,6 +46,8 @@ playButton.addEventListener("click", function () {
 
 const imgDonut = document.getElementById("donutImage");
 const clickSound = document.getElementById("clickSound");
+const vistaPrincipal = document.getElementById("vista-principal");
+const vistaSecundaria = document.getElementById("vista-secundaria");
 imgDonut.addEventListener("click", function () {
   clickSound.play();
   imgDonut.classList.remove("grayscale");
@@ -56,6 +58,10 @@ imgDonut.addEventListener("click", function () {
   setTimeout(function () {
     imgDonut.src = "./src/media/dona-mordida.png";
     typeMessage(obtenerFraseHomero("Rosquilla"), 4);
+    setTimeout(function () {
+      vistaPrincipal.classList.add("hidden");
+      vistaSecundaria.classList.remove("hidden");
+    }, 400);
   }, 600);
 });
 
