@@ -127,7 +127,7 @@ let vivo,
   rosquilla;
 
 fetch(
-  "https://main--fabulous-stroopwafel-ac8192.netlify.app/api/chatHomero.json"
+  "https://painted-brass-cow.glitch.me/api/chatHomero.json"
 )
   .then((response) => response.json())
   .then((data) => {
