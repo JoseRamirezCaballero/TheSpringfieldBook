@@ -126,7 +126,9 @@ let vivo,
   musica,
   rosquilla;
 
-fetch("/api/chatHomero.json")
+fetch(
+  "https://main--fabulous-stroopwafel-ac8192.netlify.app/api/chatHomero.json"
+)
   .then((response) => response.json())
   .then((data) => {
     vivo = data.Vivo;
